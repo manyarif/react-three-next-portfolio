@@ -9,25 +9,25 @@ export default function GlassSphere() {
     
     useFrame((state, delta) => {
         // Subtle organic movement
-        sphereRef.current.position.x = Math.sin(state.clock.elapsedTime * 0.15) * 0.1
-        sphereRef.current.position.y = Math.sin(state.clock.elapsedTime * 0.1) * 0.1
+        sphereRef.current.position.x = Math.sin(state.clock.elapsedTime * 0.5) * 0.1
+        sphereRef.current.position.y = Math.sin(state.clock.elapsedTime * 0.5) * 0.1
         sphereRef.current.rotation.y += delta * 0.05
     })
 
     return (
-        <mesh ref={sphereRef} scale={[2.5, 2.5, 2.5]}>
-            <sphereGeometry args={[1, 96, 96]} />
+        <mesh ref={sphereRef} scale={[2, 2, 2]}>
+            <sphereGeometry args={[1, 32, 32]} />
             <MeshDistortMaterial
                 transparent
-                opacity={0.9}
+                opacity={0.4}
                 roughness={0}
-                metalness={0.2}
+                metalness={0.1}
                 clearcoat={1}
-                clearcoatRoughness={0.2}
+                clearcoatRoughness={0}
                 distort={0.4}
-                speed={0.8}
-                radius={0.5}
-                ior={4}
+                speed={1.1}
+                radius={0.7}
+                ior={2}
             />
         </mesh>
     )

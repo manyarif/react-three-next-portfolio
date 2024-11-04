@@ -12,10 +12,10 @@ export default function CenteredTitle() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <p className="text-lg text-gray-500 tracking-wide">
-                        Interface Designer
+                    <p className="text-lg text-gray-500 tracking-wide -mb-20">
+                        creative developer
                     </p>
-                    <h1 className="text-[8vw] font-light tracking-tight">
+                    <h1 className="text-[11vw] font-light tracking-tight">
                         Flavio Manyari
                     </h1>
                 </motion.div>

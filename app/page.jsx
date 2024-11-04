@@ -1,8 +1,8 @@
 'use client'
 
+import { motion } from 'framer-motion'
 import { Canvas } from '@react-three/fiber'
 import { Environment, PerspectiveCamera } from '@react-three/drei'
-import { motion } from 'framer-motion' // Make sure this import is at the top
 import Link from 'next/link'
 import GlassSphere from '@/components/GlassSphere'
 import Header from '@/components/Header'
@@ -26,16 +26,15 @@ export default function Home() {
                 <CenteredTitle />
                 
                 <div className="absolute bottom-12 right-12 text-sm text-gray-500">
-                    I simplify, I humanize.
                     <motion.div
                         whileHover={{ x: 5 }}
                         transition={{ type: "spring", stiffness: 400 }}
                     >
                         <Link 
-                            href="/about"
+                            href="/"
                             className="ml-2 inline-block border-b border-gray-300 hover:border-black transition-colors"
                         >
-                            More about me →
+                            Keep scrolling...    ↓
                         </Link>
                     </motion.div>
                 </div>
