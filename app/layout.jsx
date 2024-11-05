@@ -13,7 +13,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata = {
   title: 'Flavio Manyari - Creative Developer',
-  description: 'Flavio Manyari\'s web portfolio and blog',
+  description: 'Flavio Manyari\'s web portfolio.',
 }
 
 export default function RootLayout({ children }) {

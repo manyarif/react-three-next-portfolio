@@ -4,6 +4,7 @@ import React, { useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { MeshDistortMaterial } from '@react-three/drei'
 
+
 export default function FloatingBubble() {
 
     const bubbleRef = useRef()
@@ -17,7 +18,7 @@ export default function FloatingBubble() {
 
     return (
         <mesh ref={bubbleRef}
-            scale={[2, 2, 2]}
+            scale={[ 1.5, 1.5, 1.5]}
             position={[0, 0, 0]}
         >
             <sphereGeometry args={[1, 32, 32]} />
@@ -30,11 +31,13 @@ export default function FloatingBubble() {
                 clearcoat={1}
                 clearcoatRoughness={0.1}
                 distort={0.6}
-                speed={2}
-                radius={0.7}
+                speed={1.7}
+                radius={0.8}
                 ior={1}
                 transmission={1}
-                thickness={1}
+                thickness={2}
+                backside={true}
+                chromaticAberration={0.02}
             />
         </mesh>
     )

@@ -13,18 +13,19 @@ export default function Navbar() {
     const [hoveredLink, setHoveredLink] = useState(null)
 
     return (
-        <header className="fixed w-full top-0 z-50">
+        <header className="fixed w-full top-0 z-40">
             {/* Left side - Logo */}
-            <div className="fixed top-8 left-12">
+            <div className="fixed top-12 left-12">
                 <Link href="/" className="block">
                     <div className={`
                         ${spaceGrotesk.className}
                         text-8xl
                         tracking-wider
                         font-light
-                        hover:opacity-70
+                        hover:opacity-65
                         transition-opacity
                         duration-300
+                        relative
                     `}>
                         FM
                     </div>
@@ -32,7 +33,7 @@ export default function Navbar() {
             </div>
 
             {/* Right side - Navigation */}
-            <div className="fixed top-8 right-12 flex flex-col items-end space-y-6">
+            <div className="fixed top-12 right-12 flex flex-col items-end space-y-6">
                 <NavLink href="/works" active={hoveredLink === 'works'} onHover={() => setHoveredLink('works')}>Works</NavLink>
                 <NavLink href="/about" active={hoveredLink === 'about'} onHover={() => setHoveredLink('about')}>About</NavLink>
                 <NavLink href="/contact" active={hoveredLink === 'contact'} onHover={() => setHoveredLink('contact')}>Contact</NavLink>
