@@ -2,8 +2,14 @@
 
 import React, { useState } from 'react'
 import Link from 'next/link'
+import { Space_Grotesk } from 'next/font/google'
 
-export default function Header() {
+const spaceGrotesk = Space_Grotesk({ 
+    subsets: ['latin'],
+    weight: ['400']
+})
+
+export default function Navbar() {
     const [hoveredLink, setHoveredLink] = useState(null)
 
     return (
@@ -11,7 +17,15 @@ export default function Header() {
             {/* Left side - Logo */}
             <div className="fixed top-8 left-12">
                 <Link href="/" className="block">
-                    <div className="text-3xl font-bold">
+                    <div className={`
+                        ${spaceGrotesk.className}
+                        text-8xl
+                        tracking-wider
+                        font-light
+                        hover:opacity-70
+                        transition-opacity
+                        duration-300
+                    `}>
                         FM
                     </div>
                 </Link>
@@ -36,13 +50,13 @@ const NavLink = ({ href, children, active, onHover }) => {
             onMouseEnter={onHover}
             onMouseLeave={() => onHover(null)}
         >
-            <span className="block py-1 text-sm tracking-wide">
+            <span className={`${spaceGrotesk.className} block py-1 text-sm tracking-wide`}>
                 {children}
                 <span 
                     className={`
-                        absolute bottom-[1px] left-0 w-full h-[0.5px] bg-black
-                        transform transition-all duration-150 ease-out
-                        ${active ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0'}
+                        absolute bottom-[5px] left-0 w-full h-[0.5px] bg-black
+                        transform origin-left scale-x-0 transition-transform duration-300 ease-out
+                        group-hover:scale-x-100
                     `}
                 />
             </span>

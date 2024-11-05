@@ -1,5 +1,15 @@
 import { Layout } from '@/components/dom/Layout'
-import '@/global.css'
+import '@/styles/global.css'
+import { Montserrat, Space_Grotesk } from 'next/font/google'
+
+const montserrat = Montserrat({ 
+    subsets: ['latin'],
+    weight: ['300', '400', '500']
+})
+const spaceGrotesk = Space_Grotesk({ 
+    subsets: ['latin'],
+    weight: ['300', '400', '500']
+})
 
 export const metadata = {
   title: 'Flavio Manyari - Creative Developer',
